@@ -146,21 +146,24 @@ def conversion_call(filename, path):
     return temp
 
 
+def node_metadata(filename):
+    temp = {}
+    temp['title'] = file
+    temp['id'] = generate_uuid()
+    temp['description'] = "v1"
+    temp['children'] = []
+    return temp
+
+
 for file in os.listdir(content_path):
     path = content_path +"/"+ file
-    FINAL_TREE1 = {}
-    FINAL_TREE1['title'] = file
-    FINAL_TREE1['id'] = generate_uuid()
-    FINAL_TREE1['description'] = "v1"
-    FINAL_TREE1['children'] = []
+    FINAL_TREE1 = node_metadata(file)
+
     for file1 in os.listdir(path):
         path2 = path+"/"+file1
         if os.path.isdir(path2):
-            FINAL_TREE2 = {}
-            FINAL_TREE2['title'] = file1
-            FINAL_TREE2['id'] = generate_uuid()
-            FINAL_TREE2['description'] = "v1"
-            FINAL_TREE2['children'] = []    
+            FINAL_TREE2 = node_metadata(file1)
+
             for file2 in os.listdir(path2):
                 path3 = path2+"/"+file2
                 FINAL_TREE2['children'].append(conversion_call(file2, path3))
