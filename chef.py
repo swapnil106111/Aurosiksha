@@ -148,7 +148,7 @@ def conversion_call(filename, path):
 
 def node_metadata(filename):
     temp = {}
-    temp['title'] = file
+    temp['title'] = filename
     temp['id'] = generate_uuid()
     temp['description'] = "v1"
     temp['children'] = []
