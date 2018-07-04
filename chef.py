@@ -118,31 +118,18 @@ SAMPLE_TREE['children'] = []
 
 
 def conversion_call(filename, path):
-    if filename.endswith('.mp4'):
-        temp = {}
-        temp['title'] = filename
-        temp['id'] = generate_uuid()
-        temp['author'] = "Aurosiksha"
-        temp['license'] = "All Rights Reserved"
-        temp['copyright_holder'] = "Aravind Eye Care System"
-        temp['files'] = [
-                            {
-                                "path":path,
-                            }
-                        ]
+    temp = {}
+    temp['title'] = filename
+    temp['id'] = generate_uuid()
+    temp['author'] = "Aurosiksha"
+    temp['license'] = "All Rights Reserved"
+    temp['copyright_holder'] = "Aravind Eye Care System"
+    temp['files'] = [
+                        {
+                            "path":path,
+                        }
+                    ]
 
-    elif filename.endswith('.pdf'):
-        temp = {}
-        temp['title'] = filename
-        temp['id'] = generate_uuid()
-        temp['author'] = "Aurosiksha"
-        temp['license'] = "All Rights Reserved"
-        temp['copyright_holder'] = "Aravind Eye Care System"
-        temp['files'] = [
-                            {
-                                "path":path,
-                            }
-                        ]
     return temp
 
 
